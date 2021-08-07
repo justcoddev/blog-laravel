@@ -9,5 +9,3 @@
 
   <h1>Bienvenido a la pagina de Lenguajes de Programación: <?php echo $lenguaje;?> </h1>
 @endsection
-
-
