@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class LenguajeController extends Controller
 {
     public function index(){
- return view('lenguajes.index') ;
+ return view('lenguajes.index');
     }
     public function create(){
   return view('lenguajes.create');
