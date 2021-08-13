@@ -27,9 +27,13 @@ Route::get('lenguajes', [LenguajeController::class, 'index'] )->name('lenguajes.
 
 Route::get('lenguajes/create', [LenguajeController::class, 'create'])->name('lenguajes.create');
 
+Route::post('lenguajes', [LenguajeController::class, 'store'] ) ->name('lenguajes.store');
+
 Route::get('lenguajes/{id}', [LenguajeController::class, 'show'])->name('lenguajes.show');
 
-
+//usando metodo get se va a mandar por la url 
+//mientras que si usamos el  metodo ost , la info se manda de manera oculta
+//pon tanto si es informacion de un formulario l oque debemos hacer es unsar el método post
 //pasar mas de una variable en la URL pero ara no  tener tantas rutas, podemos
 //decir que la variable version sea opcional, colocando un signo de interrogacion al final de version
 //y de esta manera estamos diciendo que esa variable puede ser opcional

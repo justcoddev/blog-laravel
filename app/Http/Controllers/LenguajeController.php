@@ -21,15 +21,22 @@ class LenguajeController extends Controller
   {
     return view('lenguajes.create');
   }
+
+  public function store(Request $request)
+  {
+    $lenguaje = new Lenguaje();
+    $lenguaje->name = $request->name;
+    $lenguaje->descripcion = $request->descripcion;
+    $lenguaje->categoria = $request->categoria;
+    $lenguaje->save();
+  }
+
   public function show($id)
   {
     /* otra manera de pasar una variable a la vista es usando un metodo
     compact('lenguaje'); que es equivalente a colocae  ['lenguaje'=> $lenguaje] */
     //recuperar u nregistro por su id
     $lenguaje = Lenguaje::find($id);
-
-  
-
     return view('lenguajes.show', compact('lenguaje'));
   }
 }

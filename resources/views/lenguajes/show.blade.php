@@ -11,6 +11,6 @@
 <p><strong>Categoría: </strong>{{$lenguaje->categoria}}</p>
 <p>{{$lenguaje->descripcion}}</p>
 
-
+{{-- tengo que escribi --}}
   {{-- <h1>Bienvenido a la pagina de Lenguajes de Programación: <?php echo $lenguaje;?> </h1> --}}
 @endsection
