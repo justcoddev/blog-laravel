@@ -21,11 +21,13 @@ use App\Http\Controllers\LenguajeController;
 
 Route::get('/',HomeController::class );
 
-Route::get('lenguajes', [LenguajeController::class, 'index'] );
+//Colocandole un ->name  para ser llamada en el otro lado seria imposible cambiarle la ruta  pero lo vuelve más sencillo 
+//el cambio de rtutas URL
+Route::get('lenguajes', [LenguajeController::class, 'index'] )->name('lenguajes.index');
 
-Route::get('lenguajes/create', [LenguajeController::class, 'create']);
+Route::get('lenguajes/create', [LenguajeController::class, 'create'])->name('lenguajes.create');
 
-Route::get('lenguajes/{lenguaje}', [LenguajeController::class, 'show']);
+Route::get('lenguajes/{id}', [LenguajeController::class, 'show'])->name('lenguajes.show');
 
 
 //pasar mas de una variable en la URL pero ara no  tener tantas rutas, podemos
