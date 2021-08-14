@@ -24,11 +24,23 @@ class LenguajeController extends Controller
 
   public function store(Request $request)
   {
+    //VALIDACION
+    $request->validate([
+      'name' => 'required',
+      'descripcion' => 'required',
+      'categoria' => 'required'
+    ]);
+
+
+
+
     $lenguaje = new Lenguaje();
     $lenguaje->name = $request->name;
     $lenguaje->descripcion = $request->descripcion;
     $lenguaje->categoria = $request->categoria;
+
     $lenguaje->save(); //pa guardar los datos
+
     return redirect()->route('lenguajes.show', $lenguaje);
   }
 
