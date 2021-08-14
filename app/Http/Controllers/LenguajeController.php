@@ -60,6 +60,13 @@ class LenguajeController extends Controller
   }
   public function update(Request $request, Lenguaje $lenguaje)
   {
+      //VALIDACION
+    $request->validate([
+      'name' => 'required',
+      'descripcion' => 'required',
+      'categoria' => 'required'
+    ]);
+
 
     $lenguaje->name = $request->name;
     $lenguaje->descripcion = $request->descripcion;
