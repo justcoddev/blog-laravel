@@ -29,7 +29,12 @@ Route::get('lenguajes/create', [LenguajeController::class, 'create'])->name('len
 
 Route::post('lenguajes', [LenguajeController::class, 'store'] ) ->name('lenguajes.store');
 
-Route::get('lenguajes/{id}', [LenguajeController::class, 'show'])->name('lenguajes.show');
+Route::get('lenguajes/{lenguaje}', [LenguajeController::class, 'show'])->name('lenguajes.show');
+
+Route::get('lenguajes/{lenguaje}/edit', [lenguajeController::class, 'edit'])->name('lenguajes.edit');
+
+Route::put('lenguajes/{lenguaje}', [lenguajeController::class, 'update'])->name('lenguajes.update');
+
 
 //usando metodo get se va a mandar por la url 
 //mientras que si usamos el  metodo ost , la info se manda de manera oculta

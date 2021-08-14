@@ -8,7 +8,6 @@
     <form action=" {{route('lenguajes.store')}}" method="POST">
         @csrf
 
-
         <label>
             Nombre:
             <br>
