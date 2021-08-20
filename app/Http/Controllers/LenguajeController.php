@@ -26,13 +26,22 @@ class LenguajeController extends Controller
 
   public function store(StoreLenguaje $request)
   {
-  
-    $lenguaje = new Lenguaje();
+
+    /*  $lenguaje = new Lenguaje();
     $lenguaje->name = $request->name;
     $lenguaje->descripcion = $request->descripcion;
     $lenguaje->categoria = $request->categoria;
 
     $lenguaje->save(); //pa guardar los datos
+ */
+
+    $lenguaje = Lenguaje::create(
+      $request->all()
+    );
+    /* crear una instancia de la clase curso y le va a grtegar las prpiedades name, descripcion y categoria
+eso va a ser almacenado en la varuable curso y al final salva el registro en neustra BD
+ */
+
 
     return redirect()->route('lenguajes.show', $lenguaje);
   }
@@ -53,7 +62,7 @@ class LenguajeController extends Controller
   }
   public function update(Request $request, Lenguaje $lenguaje)
   {
-      //VALIDACION
+    //VALIDACION
     $request->validate([
       'name' => 'required',
       'descripcion' => 'required',
