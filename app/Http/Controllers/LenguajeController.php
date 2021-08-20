@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Lenguaje;
 use Illuminate\Http\Request;
 
+use App\Http\Requests\StoreLenguaje;
+
 class LenguajeController extends Controller
 {
   public function index()
@@ -22,18 +24,9 @@ class LenguajeController extends Controller
     return view('lenguajes.create');
   }
 
-  public function store(Request $request)
+  public function store(StoreLenguaje $request)
   {
-    //VALIDACION
-    $request->validate([
-      'name' => 'required|max:10',
-      'descripcion' => 'required|min:10',
-      'categoria' => 'required'
-    ]);
-
-
-
-
+  
     $lenguaje = new Lenguaje();
     $lenguaje->name = $request->name;
     $lenguaje->descripcion = $request->descripcion;
