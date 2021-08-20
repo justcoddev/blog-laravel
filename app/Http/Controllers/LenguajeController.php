@@ -26,8 +26,8 @@ class LenguajeController extends Controller
   {
     //VALIDACION
     $request->validate([
-      'name' => 'required',
-      'descripcion' => 'required',
+      'name' => 'required|max:10',
+      'descripcion' => 'required|min:10',
       'categoria' => 'required'
     ]);
 
