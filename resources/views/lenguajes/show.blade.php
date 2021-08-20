@@ -16,4 +16,17 @@
 
 {{-- tengo que escribi --}}
   {{-- <h1>Bienvenido a la pagina de Lenguajes de Programación: <?php echo $lenguaje;?> </h1> --}}
+
+  <form action="{{route('lenguajes.destroy', $lenguaje )}}" method="POST"> 
+    @csrf
+    @method('delete')
+    <button type="submit">Eliminar</button>
+  </form>
+{{-- metodo distinto  debemos indicar que sea post  y dentro del formulario llamar
+  la directiva de blade @method() y dentro ponerle el metodo que vamso a usar y
+  como vamso a mandarlo desde un formulario, para no tener ningun error debemos pasarle el token
+  @scrf
+  --}}
+
+
 @endsection

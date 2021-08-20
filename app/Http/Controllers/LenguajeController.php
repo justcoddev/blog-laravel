@@ -71,4 +71,11 @@ eso va a ser almacenado en la varuable curso y al final salva el registro en neu
     $lenguaje->update($request->all());
     return redirect()->route('lenguajes.show', $lenguaje);
   }
+  public function destroy(Lenguaje $lenguaje){
+    $lenguaje->delete();
+    return redirect()->route('lenguajes.index');
+
+  }
+
+
 }

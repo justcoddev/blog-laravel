@@ -35,6 +35,9 @@ Route::get('lenguajes/{lenguaje}/edit', [lenguajeController::class, 'edit'])->na
 
 Route::put('lenguajes/{lenguaje}', [lenguajeController::class, 'update'])->name('lenguajes.update');
 
+Route::delete('lenguajes/{lenguaje}', [lenguajeController::class, 'destroy'])->name('lenguajes.destroy');
+//ruta para eliminar un registro
+
 
 //usando metodo get se va a mandar por la url 
 //mientras que si usamos el  metodo ost , la info se manda de manera oculta
