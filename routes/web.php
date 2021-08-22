@@ -24,4 +24,4 @@ Route::get('/', HomeController::class);
 //llendo a consola y colocando
 //php artisan r:l
 
-Route::resource('lenguajes', LenguajeController::class);
+Route::resource('modelos', LenguajeController::class)->names('lenguajes');
