@@ -19,38 +19,9 @@ use App\Http\Controllers\LenguajeController;
 |
 */
 
-Route::get('/',HomeController::class );
-
-//Colocandole un ->name  para ser llamada en el otro lado seria imposible cambiarle la ruta  pero lo vuelve más sencillo 
-//el cambio de rtutas URL
-Route::get('lenguajes', [LenguajeController::class, 'index'] )->name('lenguajes.index');
-
-Route::get('lenguajes/create', [LenguajeController::class, 'create'])->name('lenguajes.create');
-
-Route::post('lenguajes', [LenguajeController::class, 'store'] ) ->name('lenguajes.store');
-
-Route::get('lenguajes/{lenguaje}', [LenguajeController::class, 'show'])->name('lenguajes.show');
-
-Route::get('lenguajes/{lenguaje}/edit', [lenguajeController::class, 'edit'])->name('lenguajes.edit');
-
-Route::put('lenguajes/{lenguaje}', [lenguajeController::class, 'update'])->name('lenguajes.update');
-
-Route::delete('lenguajes/{lenguaje}', [lenguajeController::class, 'destroy'])->name('lenguajes.destroy');
-//ruta para eliminar un registro
+Route::get('/', HomeController::class);
 
 
-//usando metodo get se va a mandar por la url 
-//mientras que si usamos el  metodo ost , la info se manda de manera oculta
-//pon tanto si es informacion de un formulario l oque debemos hacer es unsar el método post
-//pasar mas de una variable en la URL pero ara no  tener tantas rutas, podemos
-//decir que la variable version sea opcional, colocando un signo de interrogacion al final de version
-//y de esta manera estamos diciendo que esa variable puede ser opcional
-//ADEMAS  dentro de la funcion inicializamso la variable dandole un valor = NULL
-//
-/* Route::get('lenguaje/{lenguaje}/{version?}', function ($lenguaje, $version= NULL) {
-    if ($version) { //si  hay algo almencenado en la variable versión imprimir esto de lo contrario
-       return "Bienvenido al lenguaje $lenguaje, versión: $version";
-    }else {
-        return "Bienvenido al lenguaje $lenguaje";
-    }
-}); */
+
+//OTRA MANERA DE DEFINIR RUTAS
+Route::resource('lenguajes', LenguajeController::class);
