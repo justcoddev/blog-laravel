@@ -23,5 +23,6 @@ Route::get('/', HomeController::class);
 //ademàs tambien le asigna mètodos como get, post, put y delete se puede saber 
 //llendo a consola y colocando
 //php artisan r:l
-
-Route::resource('modelos', LenguajeController::class)->names('lenguajes');
+//listar las rutas
+Route::resource('modelos', LenguajeController::class)->parameters(['modelos'=>'lenguaje'])->names('lenguajes');
+//de esta manera puedo cambiar la ruta principal y no tener problemas con al secundario
