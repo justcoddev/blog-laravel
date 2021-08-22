@@ -4,10 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LenguajeController;
 
-
-
-
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,5 +19,9 @@ Route::get('/', HomeController::class);
 
 
 
-//OTRA MANERA DE DEFINIR RUTAS
+//OTRA MANERA DE DEFINIR RUTAS  luego de haberlas creado es la siguiente
+//ademàs tambien le asigna mètodos como get, post, put y delete se puede saber 
+//llendo a consola y colocando
+//php artisan r:l
+
 Route::resource('lenguajes', LenguajeController::class);
