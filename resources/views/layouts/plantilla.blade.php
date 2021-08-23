@@ -13,6 +13,16 @@
 <body>
   <!-- header -->
   <!-- nav -->
+<header>
+  <h1>Just Code Developers</h1>
+  <nav>
+    <ul>
+      <li><a href="{{route('home')}}">Home</a></li>
+      <li><a href="{{route('lenguajes.index')}}">Lenguajes</a></li>
+      <li><a href="{{route('nosotros')}}">Nosotros</a></li>
+    </ul>
+  </nav>
+</header>
 
   @yield('content')
 <!-- footer -->
