@@ -8,7 +8,12 @@
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
   <!-- favicon -->
 <!-- estilos -->
-
+<style>
+  .active{
+    color: red;
+    font-weight: bold;
+  }
+</style>
 </head>
 <body>
   <!-- header -->
@@ -18,7 +23,7 @@
   <nav>
     <ul>
       <li><a href="{{route('home')}} " class="{{request()->routeIs('home') ? 'active': ''}}""  >Home</a></li>
-      <li><a href="{{route('lenguajes.index')}}" class="{{request()->routeIs('lenguajes.index')? 'active': ''}}" >Lenguajes</a>
+      <li><a href="{{route('lenguajes.index')}}" class="{{request()->routeIs('lenguajes.*')? 'active': ''}}" >Lenguajes</a>
       </li>
       <li><a href="{{route('nosotros')}}" class="{{request()->routeIs('nosotros')? 'active': ''}}" >Nosotros</a>
       </li>
