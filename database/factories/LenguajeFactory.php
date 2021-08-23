@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Lenguaje;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class LenguajeFactory extends Factory
 {
@@ -21,8 +22,12 @@ class LenguajeFactory extends Factory
      */
     public function definition()
     {
+        //indicarle que genere un nombre y l ovuelva minuscula 
+        //y los espaciados los reemplace con ese guión '-'
+        $name=$this->faker->sentence();
         return [
-            'name'=>$this->faker->sentence(),
+            'name'=>$name,
+            'slug'=> Str::slug($name,'-'),
             'descripcion'=>$this->faker->paragraph(),
             'categoria'=>$this->faker->randomElement(['Desarrollo web', 'plataformas'])
         ];

@@ -16,6 +16,7 @@ class CreateLenguajesTable extends Migration
         Schema::create('lenguajes', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('slug'); //Generar URL´s amigables
             $table->text('descripcion');
             $table->text('categoria');
             $table->timestamps();

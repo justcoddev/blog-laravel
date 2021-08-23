@@ -9,8 +9,8 @@
      <ul> 
           @foreach ($lenguajes as $lenguaje)
               <li>
-                   <a href="{{route('lenguajes.show', $lenguaje->id)}}">{{$lenguaje-> name}}</a>
-              </li>
+                   <a href="{{route('lenguajes.show', $lenguaje)}}">{{$lenguaje-> name}}</a>
+            </li>
           @endforeach
      </ul>
      {{-- estas lineas para crear los supeustos botones para cambiar la paginacion :v--}}

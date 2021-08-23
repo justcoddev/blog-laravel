@@ -19,4 +19,9 @@ class Lenguaje extends Model
      registro por asignacion masiva y el usuario a agg el campo status en el formulario, al haber incluido
      status dentro de la propiedad guarded elloquen ignoraria ese campo y me guardaria los otros campos menos status,
    */
+      public function getRouteKeyName()
+    {
+        /*eturn $this->getKeyName(); */ //comentamos para que no salga id, si no el slug 
+        return 'slug';
+      }
 }
