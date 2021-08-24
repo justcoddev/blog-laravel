@@ -5,8 +5,10 @@
 
   @section('content')
 <h1>Dejanos un mensaje</h1>
-<form action="">
+<form action="{{route('contactanos.store')}}" method="POST">
 
+
+  @csrf
   <label>
     Nombre:
     <br>
