@@ -13,11 +13,16 @@ class ContactanosController extends Controller
         return view('contactanos.index');
     }
     
-    public function store()
+    public function store(Request $request)
     {
-        $correo = new ContactanosMailable;
+        $request-> validate([
+            'name' => 'required',
+            'correo' => 'required|email',
+            'mensaje' => 'required',
+        ]);
+        $correo = new ContactanosMailable($request->all());
 
         Mail::to('edisonpaulcrz@gmail.com')->send($correo);
-        return "mensaje enviado";
+        return redirect()->route('contactanos.index')->with('info', 'Mensaje enviado');
     }
 }

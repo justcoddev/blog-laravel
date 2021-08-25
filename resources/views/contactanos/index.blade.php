@@ -15,6 +15,10 @@
     <input type="text" name="name">
     <br>
   </label>
+@error('name')
+    <p><strong>{{$message}}</strong></p>
+@enderror
+
 
   <label>
     Correo:
@@ -22,6 +26,10 @@
     <input type="text" name="correo">
  <br>
   </label>
+@error('correo')
+    <p><strong>{{$message}}</strong></p>
+@enderror
+
 
     <label>
       mensaje:
@@ -29,8 +37,20 @@
     <textarea name="mensaje" rows="4"></textarea>
  <br>
   </label>
+  @error('mensaje')
+    <p><strong>{{$message}}</strong></p>
+@enderror
+
+
   <br>
   <button type="submit">Enviar mensaje</button>
 </form>
-@endsection
 
+@if (session('info'))
+    <script>
+      alert("{{session('info')}}");
+    </script>
+@endif
+
+
+@endsection
