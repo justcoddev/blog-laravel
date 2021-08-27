@@ -51,6 +51,6 @@
       alert("{{session('info')}}");
     </script>
 @endif
-
+ 
 
 @endsection

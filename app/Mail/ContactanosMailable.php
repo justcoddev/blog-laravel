@@ -13,7 +13,7 @@ class ContactanosMailable extends Mailable
 
     public $subject = "Información de contacto"; //este es el mensaje que va en asunto
 
-    public $contacto;
+    public $contacto = "Esta es la información de contacto";
 
 
 
